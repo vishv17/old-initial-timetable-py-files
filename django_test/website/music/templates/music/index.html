@@ -1,0 +1,16 @@
+{% if all_albums %}
+
+<h1>List of all albums</h1>
+<ul>
+	{% for album in all_albums %}
+		<!-- Hardcord URL-->
+		<!-- <li><a href="/music/{{album.id}}/">{{album.album_title}}</a></li> -->
+
+		<!--Dynamic URL-->
+		<li><a href="{% 'detail' album.id %}">{{ album.album_title }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+	<h3>You Don't Have any Albums</h3>
+
+{% endif %}
